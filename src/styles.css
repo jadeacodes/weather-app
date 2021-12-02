@@ -1,0 +1,81 @@
+h1 {
+  font-size: 24px !important;
+  margin: 4px 0px 4px !important;
+}
+
+h2 {
+  font-size: 18px !important;
+}
+
+footer {
+  color: #212529;
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+.weather-app {
+  background: #adb5bd;
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.weather-box {
+  background: #6c757d;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.today-current,
+.today-icon {
+  line-height: 1;
+}
+
+.today-current {
+  font-size: 80px;
+}
+
+.degrees {
+  font-size: 16px;
+  position: relative;
+  top: -45px;
+}
+
+.today-range {
+  font-size: 16px;
+}
+
+.today-high {
+  font-weight: 500;
+}
+
+.today-icon {
+  font-size: 100px;
+}
+
+.forecast-day {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.forecast-icon {
+  font-size: 36px;
+}
+
+.forecast-range {
+  font-size: 12px;
+}
