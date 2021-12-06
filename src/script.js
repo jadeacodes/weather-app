@@ -1,27 +1,13 @@
 function formatDate(date) {
   let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
+  if (hours > 13) {
+    hours = hours - 12;
   }
-
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
-  let dayIndex = date.getDay();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[dayIndex];
-
-  return `${day} ${hours}:${minutes}`;
+  return `${hours}:${minutes}`;
 }
 
 function showWeather(response) {
@@ -80,16 +66,15 @@ function showCelsius(event) {
   temperatureElement.innerHTML = `28`;
 }
 
-// Show date
-let dateElement = document.querySelector("#date");
+// Show date of current location
 let currentTime = new Date();
-dateElement.innerHTML = formatDate(currentTime);
+document.querySelector("#date").innerHTML = formatDate(currentTime);
 
 // Search by city
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
 
-// Show current location
+// Search by current location
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentLocation);
 
