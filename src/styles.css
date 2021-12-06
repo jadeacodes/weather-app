@@ -1,3 +1,8 @@
+body {
+  text-align: center;
+  text-transform: uppercase;
+}
+
 h1 {
   font-size: 24px;
   margin: 4px 0px 4px;
@@ -8,9 +13,10 @@ h2 {
 }
 
 footer {
-  color: #212529;
+  color: #727f8d;
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
+  text-transform: none;
 }
 
 a {
@@ -29,7 +35,6 @@ a:hover {
   margin: 20px auto;
   max-width: 500px;
   padding: 20px 30px;
-  text-align: center;
 }
 
 .weather-box {
@@ -37,7 +42,6 @@ a:hover {
   border-radius: 4px;
   margin-bottom: 15px;
   padding: 10px;
-  text-transform: uppercase;
 }
 
 .today-current,
