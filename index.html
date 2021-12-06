@@ -29,14 +29,15 @@
       <div class="weather-app">
         <section class="weather-box">
           <h2 id="date"></h2>
-          <h1>
-            Weather in
-            <div id="city"></div>
-          </h1>
-
-          <hr />
+          <h1 id="city"></h1>
 
           <div class="row">
+            <div class="col-6">
+              <div class="col-12 today-icon">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+            </div>
+
             <div class="col-6">
               <span class="today-current"></span>
               <span class="degrees">
@@ -48,11 +49,6 @@
                 <span class="today-high">83</span>° |
                 <span id="today-low">77</span>°
                 <i class="fas fa-arrow-down"></i>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="col-12 today-icon">
-                <i class="fas fa-cloud-sun"></i>
               </div>
             </div>
           </div>
