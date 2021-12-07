@@ -1,21 +1,19 @@
-body {
-  text-align: center;
-  text-transform: uppercase;
-}
-
 header {
   font-size: 16px;
+  font-weight: 300;
 }
 
 footer {
   color: #727f8d;
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
-  text-transform: none;
+  font-weight: 300;
+  text-align: center;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 36px;
+  margin-top: 10px;
 }
 
 ul {
@@ -23,12 +21,8 @@ ul {
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-}
-
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .weather-app {
@@ -36,33 +30,25 @@ a:hover {
   border-radius: 4px;
   color: #fff;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
   margin: 20px auto 10px auto;
-  max-width: 500px;
+  max-width: 450px;
   padding: 20px 30px;
+  text-transform: uppercase;
 }
 
 .convert {
   text-align: right;
 }
 
-.today,
-.forecast {
-  margin-top: 10px;
-}
-
 .today-icon {
   font-size: 96px;
-  line-height: 120px;
-}
-
-.today-current,
-.today-weather {
-  text-align: left;
+  margin-bottom: 10px;
 }
 
 .today-current {
   font-size: 60px;
-  line-height: 40px;
+  line-height: normal;
 }
 
 .degrees {
@@ -74,12 +60,7 @@ a:hover {
 .today-weather {
   font-size: 16px;
   font-weight: 300;
-  line-height: 24px;
-}
-
-.forecast {
-  text-align: center;
-  margin-bottom: 10px;
+  text-align: left;
 }
 
 .forecast-day {
@@ -99,7 +80,7 @@ a:hover {
   font-weight: 500;
 }
 
-.input-group-text {
+.search-buttons {
   background: transparent;
   border: none;
   color: #fff;
