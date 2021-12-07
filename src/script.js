@@ -12,10 +12,10 @@ function formatDate(date) {
 
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector(".today-current").innerHTML = Math.round(
+  document.querySelector("#today-current").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector(".today-high").innerHTML = Math.round(
+  document.querySelector("#today-high").innerHTML = Math.round(
     response.data.main.temp_max
   );
   document.querySelector("#today-low").innerHTML = Math.round(
@@ -56,13 +56,13 @@ function getCurrentLocation(event) {
 
 function showFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector(".today-current");
+  let temperatureElement = document.querySelector("#today-current");
   temperatureElement.innerHTML = `83`;
 }
 
 function showCelsius(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector(".today-current");
+  let temperatureElement = document.querySelector("#today-current");
   temperatureElement.innerHTML = `28`;
 }
 

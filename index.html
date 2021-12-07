@@ -25,90 +25,113 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div>
       <div class="weather-app">
-        <section class="weather-box">
-          <h2 id="date"></h2>
-          <h1 id="city"></h1>
-
+        <header>
           <div class="row">
-            <div class="col-6">
-              <div class="col-12 today-icon">
-                <i class="fas fa-cloud-sun"></i>
+            <div class="col"></div>
+            <div class="col"><span id="date"></span></div>
+            <div class="col">
+              <div class="convert">
+                <a href="#" class="text-white" id="fahrenheit-link">F</a> |
+                <a href="#" class="text-white" id="celsius-link">C</a>
               </div>
             </div>
+          </div>
+        </header>
 
-            <div class="col-6">
-              <span class="today-current"></span>
-              <span class="degrees">
-                <a href="#" class="text-white" id="fahrenheit-link">°F</a> |
-                <a href="#" class="text-white" id="celsius-link">°C</a></span
-              >
-              <div class="today-range">
-                <i class="fas fa-arrow-up"></i>
-                <span class="today-high">83</span>° |
-                <span id="today-low">77</span>°
-                <i class="fas fa-arrow-down"></i>
+        <section class="today">
+          <div class="row align-items-end">
+            <div class="col-7">
+              <span class="today-icon">
+                <i class="fas fa-cloud-sun"></i>
+              </span>
+              <h1 id="city"></h1>
+            </div>
+
+            <div class="col-5">
+              <div class="today-current">
+                <span id="today-current"></span><span class="degrees">°F</span>
               </div>
+
+              <ul class="today-weather">
+                <li>
+                  <i class="fas fa-arrow-up"></i>
+                  <span id="today-high"></span>°
+                  <i class="fas fa-arrow-down"></i>
+                  <span id="today-low"></span>°
+                </li>
+                <li><i class="fas fa-arrow-up"></i> XX%</li>
+                <li><i class="fas fa-arrow-up"></i> XX MPH</li>
+              </ul>
             </div>
           </div>
         </section>
 
-        <section class="weather-box">
+        <section class="forecast">
           <div class="row">
             <div class="col">
-              <div class="col-12 forecast-day">MON</div>
-              <div class="col-12 forecast-icon"><i class="fas fa-sun"></i></div>
-              <div class="col-12 forecast-range">
-                <strong>83°</strong>
-                | 74°
-              </div>
+              <ul>
+                <li class="forecast-day">MON</li>
+                <li class="forecast-icon"><i class="fas fa-sun"></i></li>
+                <li class="forecast-range">
+                  <span class="forecast-high">83° </span> 74°
+                </li>
+              </ul>
             </div>
+
             <div class="col">
-              <div class="col-12 forecast-day">TUE</div>
-              <div class="col-12 forecast-icon">
-                <i class="fas fa-cloud-sun-rain"></i>
-              </div>
-              <div class="col-12 forecast-range">
-                <strong>78°</strong>
-                | 68°
-              </div>
+              <ul>
+                <li class="forecast-day">TUE</li>
+                <li class="forecast-icon">
+                  <i class="fas fa-cloud-sun-rain"></i>
+                </li>
+                <li class="forecast-range">
+                  <span class="forecast-high">78° </span> 68°
+                </li>
+              </ul>
             </div>
+
             <div class="col">
-              <div class="col-12 forecast-day">WED</div>
-              <div class="col-12 forecast-icon">
-                <i class="fas fa-cloud-rain"></i>
-              </div>
-              <div class="col-12 forecast-range">
-                <strong>74°</strong>
-                | 68°
-              </div>
+              <ul>
+                <li class="forecast-day">WED</li>
+                <li class="forecast-icon">
+                  <i class="fas fa-cloud-rain"></i>
+                </li>
+                <li class="forecast-range">
+                  <span class="forecast-high">74° </span> 68°
+                </li>
+              </ul>
             </div>
+
             <div class="col">
-              <div class="col-12 forecast-day">THU</div>
-              <div class="col-12 forecast-icon">
-                <i class="fas fa-cloud"></i>
-              </div>
-              <div class="col-12 forecast-range">
-                <strong>76°</strong>
-                | 67°
-              </div>
+              <ul>
+                <li class="forecast-day">THU</li>
+                <li class="forecast-icon">
+                  <i class="fas fa-cloud"></i>
+                </li>
+                <li class="forecast-range">
+                  <span class="forecast-high">76° </span> 67°
+                </li>
+              </ul>
             </div>
+
             <div class="col">
-              <div class="col-12 forecast-day">FRI</div>
-              <div class="col-12 forecast-icon">
-                <i class="fas fa-wind"></i>
-              </div>
-              <div class="col-12 forecast-range">
-                <strong>78°</strong>
-                | 68°
-              </div>
+              <ul>
+                <li class="forecast-day">FRI</li>
+                <li class="forecast-icon">
+                  <i class="fas fa-wind"></i>
+                </li>
+                <li class="forecast-range">
+                  <span class="forecast-high">78° </span> 68°
+                </li>
+              </ul>
             </div>
           </div>
         </section>
 
         <form id="search-form">
-          <div class="input-group rounded">
+          <div class="input-group">
             <input
               autofocus="on"
               autocomplete="off"
@@ -117,18 +140,10 @@
               placeholder="Enter a city"
               type="search"
             />
-            <button
-              class="input-group-text border-0 bg-transparent"
-              type="submit"
-              value="Search"
-            >
+            <button class="input-group-text" type="submit" value="Search">
               <i class="fas fa-search"></i>
             </button>
-            <button
-              class="input-group-text border-0 bg-transparent"
-              id="current-button"
-              type="button"
-            >
+            <button class="input-group-text" id="current-button">
               <i class="fas fa-compass"></i>
             </button>
           </div>
