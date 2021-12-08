@@ -14,10 +14,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Mallanna&family=Roboto+Mono&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <script
       src="https://kit.fontawesome.com/03040bb642.js"
       crossorigin="anonymous"
@@ -27,18 +27,52 @@
   <body>
     <div>
       <div class="weather-app">
-        <header>
+        <section class="info">
           <div class="row">
-            <div class="col"></div>
-            <div class="col"><span id="date"></span></div>
             <div class="col">
-              <div class="convert">
-                <a href="#" class="text-white" id="fahrenheit-link">F</a> |
-                <a href="#" class="text-white" id="celsius-link">C</a>
+              <div
+                class="btn-group btn-group-sm"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio"
+                  id="fahrenheit-link"
+                  autocomplete="off"
+                  aria-pressed="true"
+                />
+                <label class="btn btn-outline-primary" for="fahrenheit-link"
+                  >F</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio"
+                  id="celsius-link"
+                  autocomplete="off"
+                  aria-pressed="true"
+                />
+                <label class="btn btn-outline-primary" for="celsius-link"
+                  >C</label
+                >
               </div>
             </div>
+
+            <div class="col"><span id="date"></span></div>
+
+            <div class="col">
+              <button
+                class="input-group-text search-buttons"
+                id="current-button"
+              >
+                <i class="fas fa-compass"></i>
+              </button>
+            </div>
           </div>
-        </header>
+        </section>
 
         <section>
           <h1 id="city"></h1>
@@ -48,33 +82,30 @@
         <section>
           <div class="row">
             <div class="col">
-              <div>
-                <span class="today-current" id="today-current"></span
-                ><span class="degrees">°F</span>
-                <div>
-                  <i class="fas fa-arrow-up"></i>
-                  <span id="today-high"></span>°
-                  <i class="fas fa-arrow-down"></i>
-                  <span id="today-low"></span>°
-                </div>
+              <div class="today-current">
+                <span id="today-current"></span><span class="degrees">°F</span>
               </div>
             </div>
 
             <div class="col">
               <ul class="today-weather">
-                <li>Cloudy</li>
+                <li>
+                  <i class="fas fa-arrow-up"></i> <span id="today-high"></span>°
+                  <i class="fas fa-arrow-down"></i>
+                  <span id="today-low"></span>°
+                </li>
                 <li><i class="fas fa-arrow-up"></i> XX%</li>
-                <li><i class="fas fa-arrow-up"></i> XX MPH</li>
+                <li><i class="fas fa-arrow-up"></i> XX mph</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section>
-          <div class="row">
+          <div class="row forecast">
             <div class="col">
               <ul>
-                <li class="forecast-day">MON</li>
+                <li class="forecast-day">Mon</li>
                 <li class="forecast-icon"><i class="fas fa-sun"></i></li>
                 <li class="forecast-range">
                   <span class="forecast-high">83° </span> 74°
@@ -84,7 +115,7 @@
 
             <div class="col">
               <ul>
-                <li class="forecast-day">TUE</li>
+                <li class="forecast-day">Tue</li>
                 <li class="forecast-icon">
                   <i class="fas fa-cloud-sun-rain"></i>
                 </li>
@@ -96,7 +127,7 @@
 
             <div class="col">
               <ul>
-                <li class="forecast-day">WED</li>
+                <li class="forecast-day">Wed</li>
                 <li class="forecast-icon">
                   <i class="fas fa-cloud-rain"></i>
                 </li>
@@ -108,7 +139,7 @@
 
             <div class="col">
               <ul>
-                <li class="forecast-day">THU</li>
+                <li class="forecast-day">Thu</li>
                 <li class="forecast-icon">
                   <i class="fas fa-cloud"></i>
                 </li>
@@ -120,7 +151,7 @@
 
             <div class="col">
               <ul>
-                <li class="forecast-day">FRI</li>
+                <li class="forecast-day">Fri</li>
                 <li class="forecast-icon">
                   <i class="fas fa-wind"></i>
                 </li>
@@ -135,9 +166,8 @@
         <form id="search-form">
           <div class="input-group">
             <input
-              autofocus="on"
               autocomplete="off"
-              class="form-control rounded"
+              class="form-control rounded search-input"
               id="city-input"
               placeholder="Enter a city"
               type="search"
@@ -148,9 +178,6 @@
               value="Search"
             >
               <i class="fas fa-search"></i>
-            </button>
-            <button class="input-group-text search-buttons" id="current-button">
-              <i class="fas fa-compass"></i>
             </button>
           </div>
         </form>
